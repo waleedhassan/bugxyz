@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p .mvn/wrapper)",
+      "Bash(mvnw:*)",
+      "Bash(chmod +x mvnw)",
+      "Bash(.mvn/wrapper/maven-wrapper.properties:*)"
+    ]
+  }
+}
