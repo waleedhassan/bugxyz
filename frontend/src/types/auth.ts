@@ -1,0 +1,26 @@
+export interface User {
+  id: number;
+  email: string;
+  fullName: string;
+  role: 'ADMIN' | 'DEVELOPER' | 'TESTER';
+  avatarUrl?: string;
+  isActive: boolean;
+  createdAt: string;
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface RegisterRequest {
+  email: string;
+  password: string;
+  fullName: string;
+}
+
+export interface AuthResponse {
+  accessToken: string;
+  refreshToken: string;
+  user: User;
+}
