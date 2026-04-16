@@ -11,6 +11,8 @@ public interface BugConfirmationRepository extends JpaRepository<BugConfirmation
 
     List<BugConfirmation> findByBugId(Long bugId);
 
+    boolean existsByBugIdAndUserId(Long bugId, Long userId);
+
     long countByBugIdAndConfirmedTrue(Long bugId);
 
     long countByBugId(Long bugId);

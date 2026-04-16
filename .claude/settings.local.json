@@ -5,7 +5,8 @@
       "Bash(mvnw:*)",
       "Bash(chmod +x mvnw)",
       "Bash(.mvn/wrapper/maven-wrapper.properties:*)",
-      "Bash(./mvnw --version)"
+      "Bash(./mvnw --version)",
+      "Bash(mvn compile:*)"
     ]
   }
 }
