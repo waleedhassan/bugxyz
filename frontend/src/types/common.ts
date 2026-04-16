@@ -79,13 +79,16 @@ export interface UserWorkload {
 
 export interface DuplicateCandidate {
   bugId: number;
-  title: string;
+  bugTitle: string;
+  title?: string;
   status: string;
-  similarity: number;
+  similarityScore: number;
+  similarity?: number;
 }
 
 export interface AIPrediction {
   predictedSeverity?: string;
+  predictedPriority?: string;
   confidence?: number;
   predictedFixHours?: number;
   suggestedAssigneeId?: number;
@@ -102,4 +105,5 @@ export interface NLParseResult {
   stepsToReproduce?: string;
   expectedBehavior?: string;
   actualBehavior?: string;
+  tags?: string[];
 }

@@ -10,4 +10,10 @@ import org.springframework.stereotype.Repository;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
 
     Page<Project> findByNameContainingIgnoreCase(String name, Pageable pageable);
+
+    Page<Project> findByIsArchivedFalse(Pageable pageable);
+
+    Page<Project> findByNameContainingIgnoreCaseAndIsArchivedFalse(String name, Pageable pageable);
+
+    boolean existsByKey(String key);
 }
