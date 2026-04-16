@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
     Page<Comment> findByBugId(Long bugId, Pageable pageable);
+
+    Page<Comment> findByBugIdOrderByCreatedAtDesc(Long bugId, Pageable pageable);
 }
