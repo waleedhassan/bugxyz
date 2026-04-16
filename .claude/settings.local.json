@@ -6,7 +6,10 @@
       "Bash(chmod +x mvnw)",
       "Bash(.mvn/wrapper/maven-wrapper.properties:*)",
       "Bash(./mvnw --version)",
-      "Bash(mvn compile:*)"
+      "Bash(mvn compile:*)",
+      "Bash(./mvnw compile:*)",
+      "Bash(./mvnw clean:*)",
+      "Bash(./mvnw test-compile:*)"
     ]
   }
 }
