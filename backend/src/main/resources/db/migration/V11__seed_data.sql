@@ -4,10 +4,10 @@
 
 -- Users
 INSERT INTO users (id, email, password_hash, full_name, role) VALUES
-(1, 'admin@bugxyz.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Admin User', 'ADMIN'),
-(2, 'dev1@bugxyz.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Alice Developer', 'DEVELOPER'),
-(3, 'dev2@bugxyz.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Bob Developer', 'DEVELOPER'),
-(4, 'tester@bugxyz.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Charlie Tester', 'TESTER');
+(1, 'admin@bugxyz.com', '$2a$10$TEnb1EXGh2npH7RpGcyLeeDJ2/L.mPkTtKkMWhZrHuFyjVqFUBztK', 'Admin User', 'ADMIN'),
+(2, 'dev1@bugxyz.com', '$2a$10$TEnb1EXGh2npH7RpGcyLeeDJ2/L.mPkTtKkMWhZrHuFyjVqFUBztK', 'Alice Developer', 'DEVELOPER'),
+(3, 'dev2@bugxyz.com', '$2a$10$TEnb1EXGh2npH7RpGcyLeeDJ2/L.mPkTtKkMWhZrHuFyjVqFUBztK', 'Bob Developer', 'DEVELOPER'),
+(4, 'tester@bugxyz.com', '$2a$10$TEnb1EXGh2npH7RpGcyLeeDJ2/L.mPkTtKkMWhZrHuFyjVqFUBztK', 'Charlie Tester', 'TESTER');
 
 SELECT setval('users_id_seq', 4);
 
