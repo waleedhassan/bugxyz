@@ -55,14 +55,15 @@ public interface BugRepository extends JpaRepository<Bug, Long>, JpaSpecificatio
     @Query("SELECT b FROM Bug b WHERE b.closedAt IS NOT NULL AND b.closedAt >= :since")
     List<Bug> findClosedSince(@Param("since") LocalDateTime since);
 
-    @Query("SELECT b.severity, AVG(EXTRACT(EPOCH FROM (b.closedAt - b.createdAt)) / 3600) " +
-           "FROM Bug b WHERE b.closedAt IS NOT NULL GROUP BY b.severity")
+    @Query(value = "SELECT b.severity, AVG(EXTRACT(EPOCH FROM (b.closed_at - b.created_at)) / 3600) " +
+           "FROM bugs b WHERE b.closed_at IS NOT NULL GROUP BY b.severity", nativeQuery = true)
     List<Object[]> avgTimeToFixBySeverity();
 
-    @Query("SELECT b.assignee.id, b.assignee.fullName, " +
-           "SUM(CASE WHEN b.status NOT IN (com.bugxyz.enums.BugStatus.RESOLVED, com.bugxyz.enums.BugStatus.CLOSED) THEN 1 ELSE 0 END), " +
-           "SUM(CASE WHEN b.status IN (com.bugxyz.enums.BugStatus.RESOLVED, com.bugxyz.enums.BugStatus.CLOSED) THEN 1 ELSE 0 END), " +
-           "AVG(CASE WHEN b.closedAt IS NOT NULL THEN EXTRACT(EPOCH FROM (b.closedAt - b.createdAt)) / 3600 ELSE NULL END) " +
-           "FROM Bug b WHERE b.assignee IS NOT NULL GROUP BY b.assignee.id, b.assignee.fullName")
+    @Query(value = "SELECT b.assignee_id, u.full_name, " +
+           "SUM(CASE WHEN b.status NOT IN ('RESOLVED', 'CLOSED') THEN 1 ELSE 0 END), " +
+           "SUM(CASE WHEN b.status IN ('RESOLVED', 'CLOSED') THEN 1 ELSE 0 END), " +
+           "AVG(CASE WHEN b.closed_at IS NOT NULL THEN EXTRACT(EPOCH FROM (b.closed_at - b.created_at)) / 3600 ELSE NULL END) " +
+           "FROM bugs b JOIN users u ON u.id = b.assignee_id " +
+           "WHERE b.assignee_id IS NOT NULL GROUP BY b.assignee_id, u.full_name", nativeQuery = true)
     List<Object[]> developerStats();
 }

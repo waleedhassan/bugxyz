@@ -9,7 +9,8 @@
       "Bash(mvn compile:*)",
       "Bash(./mvnw compile:*)",
       "Bash(./mvnw clean:*)",
-      "Bash(./mvnw test-compile:*)"
+      "Bash(./mvnw test-compile:*)",
+      "Bash(pg_isready -h localhost -p 5432)"
     ]
   }
 }
