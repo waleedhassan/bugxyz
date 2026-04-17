@@ -17,7 +17,7 @@ public class TfIdfEngine {
             "shall", "can", "need", "dare", "ought", "used", "it", "its", "my", "me", "we", "our",
             "ours", "you", "your", "yours", "he", "him", "his", "she", "her", "hers", "they", "them",
             "their", "theirs", "what", "which", "who", "whom", "this", "that", "these", "those",
-            "am", "been", "being", "having", "doing", "would", "could", "should", "might",
+            "am", "having", "doing",
             "not", "no", "nor", "if", "then", "else", "when", "while", "where", "how", "all",
             "each", "every", "both", "few", "more", "most", "other", "some", "such", "only",
             "own", "same", "so", "than", "too", "very", "just", "because", "about", "into",
